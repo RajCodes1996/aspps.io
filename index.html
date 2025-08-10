@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ajay Satya Prakash Public School</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #fdf2e9;
+    }
+    header {
+        background-color: #3113bb;
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+    }
+    header img {
+        height: 70px;
+        vertical-align: middle;
+    }
+    nav {
+        background-color: #8c0000;
+        padding: 10px;
+        text-align: center;
+    }
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+    }
+    nav a:hover {
+        text-decoration: underline;
+    }
+    .main {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px;
+    }
+    /* Slideshow container */
+    .slideshow-container {
+        position: relative;
+        max-width: 650px;
+        flex: 2;
+    }
+    .mySlides {
+        display: none;
+    }
+    .mySlides img {
+        width: 100%;
+        border: 3px solid white;
+        border-radius: 5px;
+        box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+    }
+    /* Next & previous buttons */
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        padding: 12px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        transition: 0.3s;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        background-color: rgba(0,0,0,0.5);
+    }
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
+    .sidebar {
+        flex: 1;
+        background-color: #fff5e6;
+        padding: 20px;
+        border: 1px solid #ddd;
+    }
+    .sidebar button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        background-color: red;
+        border: none;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .sidebar button:hover {
+        background-color: darkorange;
+    }
+    .welcome {
+        padding: 20px;
+        margin-top: 10px;
+    }
+    .welcome h2 {
+        color: #8c0000;
+    }
+    .toppers {
+        margin: 20px;
+    }
+    .topper-card {
+        display: inline-block;
+        width: 150px;
+        background: white;
+        border: 1px solid #ccc;
+        margin: 10px;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+    }
+    .topper-card img {
+        width: 100%;
+        border-radius: 5px;
+    }
+    footer {
+        background-color: #8c0000;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <img src="images/logoo.png" alt="School Logo">
+    <h1>AJAY SATYA PRAKASH PUBLIC SCHOOL</h1>
+    <p>Affiliated to CBSE | Affiliation No: 123456</p>
+    <p>Address: Ajay Satya Prakash Public School, Jabalpur(M.P)</p>
+</header>
+
+<nav>
+    <a href="#">ABOUT US</a>
+    <a href="#">ADMINISTRATION</a>
+    <a href="#">ACADEMICS</a>
+    <a href="#">STUDENTS</a>
+    <a href="#">FACILITIES</a>
+    <a href="#">GALLERY</a>
+    <a href="#">QUICK LINKS</a>
+</nav>
+
+<div class="main">
+    <!-- Slideshow Section -->
+    <div class="slideshow-container">
+        <div class="mySlides">
+            <img src="images/one.png" alt="Event 1">
+        </div>
+        <div class="mySlides">
+            <img src="images/three.jpg" alt="Event 2">
+        </div>
+        <div class="mySlides">
+            <img src="images/four.jpg" alt="Event 3">
+        </div>
+
+        <!-- Navigation arrows -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <!-- Sidebar Section -->
+    <div class="sidebar">
+        <img src="images/as.png" alt="Preschool Ad" style="width:100%">
+        <button>Pay Online Fees</button>
+        <button>Online Registration Form</button>
+        <button>CBSE Mandatory Disclosure</button>
+        <h3 style="color:#8c0000;">Latest News</h3>
+        <p><strong>ADMISSION OPEN FROM NUR TO XI 2025</strong></p>
+    </div>
+</div>
+
+<!-- Welcome Section -->
+<div class="welcome">
+    <h2>Welcome to Top CBSE School of Jabalpur</h2>
+    <p>
+        The Ajay Satya Prakash Public School was founded in July 1992. 
+        The school started in the new campus at [Location] up to Senior Secondary Level with CBSE affiliation in July 2009. 
+        Our school is committed to academic excellence, co-curricular development, and moral values, ensuring students are prepared for life.
+    </p>
+</div>
+
+<!-- Toppers Section -->
+<div class="toppers">
+    <h2 style="color:#8c0000; margin-left:20px;">Toppers</h2>
+    <div class="topper-card">
+        <img src="images/five.jpg" alt="Topper">
+        <p><strong>MANVI RAWAT</strong><br>X - 94.2%<br>2024-25</p>
+    </div>
+    <div class="topper-card">
+        <img src="images/six.jpg" alt="Topper">
+        <p><strong>KAVYANSH DUBEY</strong><br>X - 93.5%<br>2024-25</p>
+    </div>
+    <div class="topper-card">
+        <img src="images/seven.jpg" alt="Topper">
+        <p><strong>SAMARTH SHIVHARE</strong><br>X - 93.4%<br>2024-25</p>
+    </div>
+    <div class="topper-card">
+        <img src="images/eight.jpg" alt="Topper">
+        <p><strong>SATYAM DUBEY</strong><br>X - 92%<br>2024-25</p>
+    </div>
+    <div class="topper-card">
+        <img src="images/ten.jpg" alt="Topper">
+        <p><strong>PRADYUMN KUMAR TIWARI</strong><br>X - 91.2%<br>2024-25</p>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Ajay Satya Prakash Public School | All Rights Reserved</p>
+</footer>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function plusSlides(n) {
+    slideIndex += n - 1;
+    showSlides();
+}
+
+function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    if (slideIndex < 1) {slideIndex = slides.length}
+    slides[slideIndex-1].style.display = "block";  
+    setTimeout(showSlides, 4000); // Change image every 4 seconds
+}
+</script>
+
+</body>
+</html>
