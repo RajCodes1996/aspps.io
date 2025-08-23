@@ -13,33 +13,84 @@
     header {
         background-color: #3113bb;
         color: white;
-        padding: 10px 0;
+        padding: 10px;
         text-align: center;
     }
     header img {
         height: 70px;
         vertical-align: middle;
     }
+
+    /* Navbar */
     nav {
         background-color: #8c0000;
-        padding: 10px;
-        text-align: center;
     }
-    nav a {
+    .navbar {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .navbar li {
+        position: relative;
+    }
+    .navbar li a {
+        display: block;
+        padding: 12px 20px;
         color: white;
         text-decoration: none;
-        margin: 0 15px;
         font-weight: bold;
     }
-    nav a:hover {
-        text-decoration: underline;
+    .navbar li a:hover {
+        background-color: #4a08a0;
     }
+
+    /* Dropdown */
+    .dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #a30000;
+        min-width: 180px;
+        border-radius: 0 0 5px 5px;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+    }
+    .dropdown li a {
+        padding: 10px;
+        font-weight: normal;
+        color: white;
+    }
+    .navbar li:hover .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    /* Hamburger */
+    .menu-toggle {
+        display: none;
+        background: #8c0000;
+        color: white;
+        padding: 12px;
+        cursor: pointer;
+        text-align: center;
+        font-size: 18px;
+    }
+
     .main {
         display: flex;
         justify-content: space-between;
         margin: 20px;
+        gap: 20px;
     }
-    /* Slideshow container */
+
+    /* Slideshow */
     .slideshow-container {
         position: relative;
         max-width: 650px;
@@ -54,7 +105,6 @@
         border-radius: 5px;
         box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
     }
-    /* Next & previous buttons */
     .prev, .next {
         cursor: pointer;
         position: absolute;
@@ -76,6 +126,8 @@
     .prev:hover, .next:hover {
         background-color: rgba(0,0,0,0.8);
     }
+
+    /* Sidebar */
     .sidebar {
         flex: 1;
         background-color: #fff5e6;
@@ -96,6 +148,8 @@
     .sidebar button:hover {
         background-color: darkorange;
     }
+
+    /* Welcome */
     .welcome {
         padding: 20px;
         margin-top: 10px;
@@ -103,15 +157,19 @@
     .welcome h2 {
         color: #8c0000;
     }
+
+    /* Toppers */
     .toppers {
         margin: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
     }
     .topper-card {
-        display: inline-block;
-        width: 150px;
+        flex: 1 1 150px;
+        max-width: 180px;
         background: white;
         border: 1px solid #ccc;
-        margin: 10px;
         padding: 10px;
         text-align: center;
         border-radius: 5px;
@@ -120,12 +178,43 @@
         width: 100%;
         border-radius: 5px;
     }
+
     footer {
         background-color: #8c0000;
         color: white;
         padding: 10px;
         text-align: center;
         margin-top: 20px;
+    }
+
+    /* ✅ Responsive Styles */
+    @media (max-width: 900px) {
+        .main {
+            flex-direction: column;
+        }
+        .slideshow-container, .sidebar {
+            max-width: 100%;
+        }
+        .toppers {
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .navbar {
+            display: none;
+            flex-direction: column;
+            text-align: left;
+        }
+        .navbar li {
+            width: 100%;
+        }
+        .menu-toggle {
+            display: block;
+        }
+        .navbar.show {
+            display: flex;
+        }
     }
 </style>
 </head>
@@ -138,18 +227,60 @@
     <p>Address: Ajay Satya Prakash Public School, Jabalpur(M.P)</p>
 </header>
 
+<!-- Hamburger Button -->
+<div class="menu-toggle" onclick="toggleMenu()">☰ Menu</div>
+
+<!-- Navbar -->
 <nav>
-    <a href="#">ABOUT US</a>
-    <a href="#">ADMINISTRATION</a>
-    <a href="#">ACADEMICS</a>
-    <a href="#">STUDENTS</a>
-    <a href="#">FACILITIES</a>
-    <a href="#">GALLERY</a>
-    <a href="#">QUICK LINKS</a>
+    <ul class="navbar">
+        <li><a href="#">ABOUT US</a>
+            <ul class="dropdown">
+                <li><a href="#">History</a></li>
+                <li><a href="#">Vision & Mission</a></li>
+                <li><a href="#">Principal's Message</a></li>
+            </ul>
+        </li>
+        <li><a href="#">ADMINISTRATION</a>
+            <ul class="dropdown">
+                <li><a href="#">Management</a></li>
+                <li><a href="#">Staff</a></li>
+                <li><a href="#">Committees</a></li>
+            </ul>
+        </li>
+        <li><a href="#">ACADEMICS</a>
+            <ul class="dropdown">
+                <li><a href="#">Curriculum</a></li>
+                <li><a href="#">Subjects</a></li>
+                <li><a href="#">Exams</a></li>
+            </ul>
+        </li>
+        <li><a href="#">STUDENTS</a>
+            <ul class="dropdown">
+                <li><a href="#">Clubs</a></li>
+                <li><a href="#">Achievements</a></li>
+                <li><a href="#">Alumni</a></li>
+            </ul>
+        </li>
+        <li><a href="#">FACILITIES</a>
+            <ul class="dropdown">
+                <li><a href="#">Library</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Laboratories</a></li>
+            </ul>
+        </li>
+        <li><a href="#">GALLERY</a></li>
+        <li><a href="#">QUICK LINKS</a>
+            <ul class="dropdown">
+                <li><a href="#">Online Fees</a></li>
+                <li><a href="#">Registration</a></li>
+                <li><a href="#">CBSE Disclosure</a></li>
+            </ul>
+        </li>
+    </ul>
 </nav>
 
 <div class="main">
-    <!-- Slideshow Section -->
+    <!-- Slideshow -->
     <div class="slideshow-container">
         <div class="mySlides">
             <img src="images/one.png" alt="Event 1">
@@ -160,13 +291,11 @@
         <div class="mySlides">
             <img src="images/four.jpg" alt="Event 3">
         </div>
-
-        <!-- Navigation arrows -->
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
 
-    <!-- Sidebar Section -->
+    <!-- Sidebar -->
     <div class="sidebar">
         <img src="images/as.png" alt="Preschool Ad" style="width:100%">
         <button>Pay Online Fees</button>
@@ -177,7 +306,7 @@
     </div>
 </div>
 
-<!-- Welcome Section -->
+<!-- Welcome -->
 <div class="welcome">
     <h2>Welcome to Top CBSE School of Jabalpur</h2>
     <p>
@@ -187,9 +316,8 @@
     </p>
 </div>
 
-<!-- Toppers Section -->
+<!-- Toppers -->
 <div class="toppers">
-    <h2 style="color:#8c0000; margin-left:20px;">Toppers</h2>
     <div class="topper-card">
         <img src="images/five.jpg" alt="Topper">
         <p><strong>MANVI RAWAT</strong><br>X - 94.2%<br>2024-25</p>
@@ -235,10 +363,13 @@ function showSlides() {
     if (slideIndex > slides.length) {slideIndex = 1}    
     if (slideIndex < 1) {slideIndex = slides.length}
     slides[slideIndex-1].style.display = "block";  
-    setTimeout(showSlides, 5000); // Change image every 4 seconds
+    setTimeout(showSlides, 5000);
+}
+
+function toggleMenu() {
+    document.querySelector(".navbar").classList.toggle("show");
 }
 </script>
 
 </body>
 </html>
-
